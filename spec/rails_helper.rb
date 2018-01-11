@@ -60,7 +60,5 @@ RSpec.configure do |config|
     Capybara::Selenium::Driver.new(app, browser: :chrome)
   end
 
-  RSpec.configure do |config|
-    config.include Devise::Test::ControllerHelpers, type: :controller
-  end
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
