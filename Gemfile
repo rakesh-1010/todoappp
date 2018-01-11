@@ -43,6 +43,7 @@ group :development, :test do
   gem "capybara"
   gem 'selenium-webdriver', '~> 2.53', '>= 2.53.4'
   gem "chromedriver-helper", "1.0.0"
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do

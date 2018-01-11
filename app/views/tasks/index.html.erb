@@ -1,3 +1,5 @@
+<%= #TODO Convert all html to haml %>
+<%= #TODO separate inline js and css to its respective files %>
 <div class="row" style="margin-top: 50px">
   <div class="col-md-offset-4 col-md-4 panel panel-default">
     <div class="row" style="border-bottom: 1px solid #ddd">
@@ -5,46 +7,43 @@
         Tasks
       </h1>
       <p class="col-md-4 pull-left" style="margin-top: 32px;">
-        <%= link_to  new_task_path ,remote: true do %>
-          <span><i class="fa fa-plus">Add New Task</i></span>
-        <%end%>
+      <%= link_to  new_task_path ,remote: true do %>
+        <span><i class="fa fa-plus">Add New Task</i></span>
+      <%end%>
       </p>
       <% if user_signed_in? %>
         <h1 class="col-md-2 pull-right" title="LOGOUT">
-          <%= link_to destroy_user_session_path, method: :delete do %>
+          <%= link_to destroy_user_session_path,id: "logout", method: :delete do %>
             <i class="fa fa-power-off"></i>
           <% end %>
         </h1>
       <%end%>
     </div>
-
     <div id="new-task"></div>
     <div class="task-index">
       <%= render partial: 'index' %>
     </div>
-
   </div>
 </div>
-
 </div>
 
 
 <script>
-    $(".task-checkbox").change(function() {
-        var task_id = $(this).data("task-id")
-        if(this.checked) {
-            $(".description-"+task_id).css('text-decoration','line-through');
-            $.ajax({
-              url: 'tasks/change_task_state',
-              data: {tasks:{id: task_id,is_completed: true}},
-            })
-        }
-        else{
-            $(".description-"+task_id).css('text-decoration','none');
-            $.ajax({
-                url: 'tasks/change_task_state',
-                data: {tasks:{id: task_id,is_completed: false}},
-            })
-        }
-    });
+$(".task-checkbox").change(function() {
+  var task_id = $(this).data("task-id")
+    if(this.checked) {
+      $(".description-"+task_id).css('text-decoration','line-through');
+      $.ajax({
+        url: 'tasks/change_task_state',
+        data: {tasks:{id: task_id,is_completed: true}},
+      })
+    }
+    else{
+      $(".description-"+task_id).css('text-decoration','none');
+      $.ajax({
+        url: 'tasks/change_task_state',
+        data: {tasks:{id: task_id,is_completed: false}},
+      })
+    }
+});
 </script>

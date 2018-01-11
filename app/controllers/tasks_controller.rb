@@ -2,28 +2,20 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  # GET /tasks
-  # GET /tasks.json
   def index
     @tasks = Task.where(user_id: current_user.id)
   end
 
-  # GET /tasks/1
-  # GET /tasks/1.json
   def show
   end
 
-  # GET /tasks/new
   def new
     @task = Task.new
   end
 
-  # GET /tasks/1/edit
   def edit
   end
 
-  # POST /tasks
-  # POST /tasks.json
   def create
     @task = Task.new(task_params)
 
@@ -63,6 +55,7 @@ class TasksController < ApplicationController
   end
 
   def change_task_state
+    #TODO use set_task method
     @task = Task.find_by(id: params[:tasks][:id])
     @task.update(is_completed: params[:tasks][:is_completed])
     respond_to do |format|
