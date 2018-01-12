@@ -1,0 +1,31 @@
+- if @tasks.count == 0
+  %h1 No Tasks Yet
+%ul#sortable{:style => "list-style-type: none;"}
+  - @tasks.each do |task|
+    %li
+      .panel.panel-default{:style => "margin-top: 10px"}
+        .panel.panel-body.task-body-
+        = task.id
+        " style="margin-bottom: 0px;" &gt;
+        .col-md-1
+          %input{:type => "checkbox"}/
+          = 'checked' if task.is_completed
+          class="task-checkbox" data-task-id="#{task.id}"&gt;
+        .col-md-7
+          - if task.is_completed
+            %span.description-
+            = task.id
+            " style="text-decoration: line-through"&gt;#{task.description.upcase}
+        - else
+          %span.description-
+          = task.id
+          "&gt;#{task.description.upcase}
+    .col-md-2
+      = link_to edit_task_path(task) ,data: {remote: true} do
+        %span.description-edit-
+        = task.id
+        "&gt;
+        %i.fa.fa-edit
+  = link_to task, method: :delete, data: { confirm: 'Are you sure?',remote: true } do
+    %span
+      %i.fa.fa-trash

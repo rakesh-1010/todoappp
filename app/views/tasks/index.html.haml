@@ -1,0 +1,36 @@
+= #TODO Convert all html to haml
+= #TODO separate inline js and css to its respective files
+.row{:style => "margin-top: 50px"}
+  .col-md-offset-4.col-md-4.panel.panel-default
+    .row{:style => "border-bottom: 1px solid #ddd"}
+      %h1.col-md-5
+        Tasks
+      %p.col-md-4.pull-left{:style => "margin-top: 32px;"}
+        = link_to  new_task_path ,remote: true do
+          %span
+            %i.fa.fa-plus Add New Task
+      - if user_signed_in?
+        %h1.col-md-2.pull-right{:title => "LOGOUT"}
+          = link_to destroy_user_session_path,id: "logout", method: :delete do
+            %i.fa.fa-power-off
+    #new-task
+    .task-index
+      = render partial: 'index'
+:javascript
+  $(".task-checkbox").change(function() {
+    var task_id = $(this).data("task-id")
+      if(this.checked) {
+        $(".description-"+task_id).css('text-decoration','line-through');
+        $.ajax({
+          url: 'tasks/change_task_state',
+          data: {tasks:{id: task_id,is_completed: true}},
+        })
+      }
+      else{
+        $(".description-"+task_id).css('text-decoration','none');
+        $.ajax({
+          url: 'tasks/change_task_state',
+          data: {tasks:{id: task_id,is_completed: false}},
+        })
+      }
+  });
