@@ -1,6 +1,6 @@
 - if @tasks.count == 0
   %h1 No Tasks Yet
-%ul#sortable{:style => "list-style-type: none;"}
+%ul#sortable{:style => "list-style-type: none;padding-left: 0;"}
   - @tasks.each do |task|
     %li
       .panel.panel-default{:style => "margin-top: 10px"}

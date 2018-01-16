@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy,:change_task_state,:tag_user]
 
   def index
-    @tasks = Task.where(user_id: current_user.id)
+    @my_tasks = Task.where(user_id: current_user.id)
+    @tagged_tasks = current_user.tagings.map{|tag| tag.task}
+    @tasks = (@my_tasks + @tagged_tasks).uniq
   end
 
   def show

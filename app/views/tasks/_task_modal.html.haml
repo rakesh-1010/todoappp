@@ -8,9 +8,9 @@
       %div.row(style="margin-bottom: 10px" )
         %div.user-searchdiv.col-md-4
           = select_tag "tag_user", options_for_select( User.pluck(:name,:id)),{class: "user-searchbox form-control",placeholder: "Search & Add Members",data: {'task-id': @task.id}}
-      = render 'comments/form' 
-      - if @task.comments.size > 1
-        %div.comment-body
+      = render 'comments/form'
+      %div.comment-body
+        - if @task.comments.size > 1
           - @task.comments.where.not(:user_id => nil).order('created_at DESC').each do |comment|
             = render partial: 'comments/comments_row',locals: {comment: comment}
     .modal-footer
