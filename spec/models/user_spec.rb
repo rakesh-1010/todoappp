@@ -25,5 +25,6 @@ RSpec.describe User, type: :model do
 
   describe User do
     it { expect(User.reflect_on_association(:tasks).macro).to eq(:has_many) }
+    it { expect(User.reflect_on_association(:tagings).macro).to eq(:has_many) }
   end
 end
