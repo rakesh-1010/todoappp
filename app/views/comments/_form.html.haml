@@ -1,0 +1,16 @@
+= form_for(@comment,remote: true) do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@comment.errors.count, "error")
+        prohibited this comment from being saved:
+      %ul
+        - @comment.errors.full_messages.each do |message|
+          %li= message
+  .row{:style => "margin-top: 10px;"}
+    .col-md-9
+      = f.text_area :comment,placeholder: 'Add Comment....',class: "form-control"
+      = f.hidden_field :user_id,value: current_user.id
+      = f.hidden_field :task_id,value: @task.id
+    .col-md-2.actions
+      = f.submit 'Save',class: "btn btn-md btn-primary"

@@ -4,28 +4,22 @@
   - @tasks.each do |task|
     %li
       .panel.panel-default{:style => "margin-top: 10px"}
-        .panel.panel-body.task-body-
-        = task.id
-        " style="margin-bottom: 0px;" &gt;
-        .col-md-1
-          %input{:type => "checkbox"}/
-          = 'checked' if task.is_completed
-          class="task-checkbox" data-task-id="#{task.id}"&gt;
-        .col-md-7
-          - if task.is_completed
-            %span.description-
-            = task.id
-            " style="text-decoration: line-through"&gt;#{task.description.upcase}
-        - else
-          %span.description-
-          = task.id
-          "&gt;#{task.description.upcase}
-    .col-md-2
-      = link_to edit_task_path(task) ,data: {remote: true} do
-        %span.description-edit-
-        = task.id
-        "&gt;
-        %i.fa.fa-edit
-  = link_to task, method: :delete, data: { confirm: 'Are you sure?',remote: true } do
-    %span
-      %i.fa.fa-trash
+        .panel.panel-body{:class => "task-body-#{task.id}",:style=>"margin-bottom: 0px;"}
+          .col-md-1
+            = check_box_tag 'is_completed','',(true if task.is_completed?) || false,class: 'task-checkbox',data: {'task-id':"#{task.id}"}
+          .col-md-5
+            - if task.is_completed
+              %a{class: "description-#{task.id}",style: "text-decoration: line-through;text-overflow: ellipsis;",data: {remote: true},href: "/tasks/#{task.id}"}#{task.description.upcase}
+              %sub added by #{task.user.name.capitalize} #{task.created_at.strftime("%d %b '%y")}
+            - else
+              %a{href: "tasks/#{task.id}",class: "description-#{task.id}",style: "text-overflow: ellipsis;",data: {remote: true}}#{task.description.upcase}
+              %sub added_by #{task.user.name}
+          .col-md-4
+            %span#tagged-users #{render partial: 'comments/tagged_user_name',locals: {task: task} }
+          .col-md-2
+            = link_to edit_task_path(task) ,data: {remote: true} do
+              %span{class: "description-edit-#{task.id}"}
+                %i.fa.fa-edit
+            = link_to task, method: :delete, data: { confirm: 'Are you sure?',remote: true } do
+              %span
+                %i.fa.fa-trash

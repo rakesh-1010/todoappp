@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy,:change_task_state,:tag_user]
 
   def index
     @tasks = Task.where(user_id: current_user.id)
   end
 
   def show
+    @comment = @task.comments.build
   end
 
   def new
@@ -55,13 +56,18 @@ class TasksController < ApplicationController
   end
 
   def change_task_state
-    #TODO use set_task method
-    @task = Task.find_by(id: params[:tasks][:id])
-    @task.update(is_completed: params[:tasks][:is_completed])
+    @task.update(is_completed: params[:is_completed])
     respond_to do |format|
       format.js { redirect_to tasks_path, notice: 'Task was successfully created.' }
     end
 
+  end
+
+  def tag_user
+    @user = User.find_by(id: params[:tagged_user_id])
+    @taging = Taging.find_by(user_id: params[:tagged_user_id],task_id: params[:id])
+    Taging.add_tag(params[:tagged_user_id],params[:id],@user.name) if @taging.blank?
+    @taging.remove_tag if @taging.present?
   end
 
   private
@@ -74,4 +80,5 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:description, :is_completed, :user_id)
     end
+
 end

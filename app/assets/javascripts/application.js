@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery-ui
 //= require bootstrap.min
+//= require select2.full.min.js
 //= require_tree .
