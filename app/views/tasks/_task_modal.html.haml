@@ -3,7 +3,7 @@
     .modal-header
       %button.close{"data-dismiss" => "modal", :type => "button"} ×
       %h4.col-md-5.modal-title #{@task.description.upcase}
-      %span.col-md-5#tagged-users.pull-right #{render partial: 'comments/tagged_user_name',locals: {task: @task} }
+      %span{class: "col-md-5 pull-right tagged-users-#{@task.id}"} #{render partial: 'comments/tagged_user_name',locals: {task: @task} }
     .modal-body
       %div.row(style="margin-bottom: 10px" )
         %div.user-searchdiv.col-md-4

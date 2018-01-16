@@ -15,7 +15,7 @@
               %a{href: "tasks/#{task.id}",class: "description-#{task.id}",style: "text-overflow: ellipsis;",data: {remote: true}}#{task.description.upcase}
               %sub added_by #{task.user.name}
           .col-md-4
-            %span#tagged-users #{render partial: 'comments/tagged_user_name',locals: {task: task} }
+            %span{class: "tagged-users-#{task.id}"} #{render partial: 'comments/tagged_user_name',locals: {task: task} }
           .col-md-2
             = link_to edit_task_path(task) ,data: {remote: true} do
               %span{class: "description-edit-#{task.id}"}

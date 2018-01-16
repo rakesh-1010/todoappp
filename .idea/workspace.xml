@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a5d555e-686b-447d-ae26-823a4b7c6364" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/select2.full.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/select2-bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/select2.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/comments/_comments_row.html.haml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/comments/_tagged_user_name.html.haml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/tasks/tag_user.js.haml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/tasks.coffee" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/task.rb" afterPath="$PROJECT_DIR$/app/models/task.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.haml" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/_form.html.haml" afterPath="$PROJECT_DIR$/app/views/tasks/_form.html.haml" />
       <change beforePath="$PROJECT_DIR$/app/views/tasks/_index.html.haml" afterPath="$PROJECT_DIR$/app/views/tasks/_index.html.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/edit.js.haml" afterPath="$PROJECT_DIR$/app/views/tasks/edit.js.haml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tasks/index.html.haml" afterPath="$PROJECT_DIR$/app/views/tasks/index.html.haml" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml" afterPath="$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml" />
+      <change beforePath="$PROJECT_DIR$/app/views/tasks/tag_user.js.haml" afterPath="$PROJECT_DIR$/app/views/tasks/tag_user.js.haml" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -43,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_task_modal.html.haml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_task_modal.html.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="114" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="114" />
+              <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -67,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/tasks/tag_user.js.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
+              <caret line="0" column="112" lean-forward="true" selection-start-line="0" selection-start-column="112" selection-end-line="0" selection-end-column="112" />
               <folding />
             </state>
           </provider>
@@ -108,14 +86,14 @@
       <file leaf-file-name="_index.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tasks/_index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="300">
+              <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -151,6 +129,8 @@
     <findStrings>
       <find>mysw</find>
       <find>create</find>
+      <find>{class: &quot;tagged-users-#{task.id}&quot;}</find>
+      <find>tagged-users</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -177,12 +157,12 @@
         <option value="$PROJECT_DIR$/app/models/taging.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/comments/_tagged_user_name.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/tasks/tag_user.js.haml" />
         <option value="$PROJECT_DIR$/app/views/tasks/edit.js.haml" />
         <option value="$PROJECT_DIR$/app/views/tasks/index.html.haml" />
-        <option value="$PROJECT_DIR$/app/views/tasks/_index.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/tasks.scss" />
+        <option value="$PROJECT_DIR$/app/views/tasks/tag_user.js.haml" />
+        <option value="$PROJECT_DIR$/app/views/tasks/_index.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml" />
       </list>
     </option>
   </component>
@@ -323,16 +303,15 @@
       <option name="presentableId" value="Default" />
       <updated>1515667633536</updated>
       <workItem from="1515667634629" duration="3482000" />
-      <workItem from="1516030163936" duration="10535000" />
+      <workItem from="1516030163936" duration="11089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14017000" />
+    <option name="totallyTimeSpent" value="14571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1315" height="812" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24942966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -639,14 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/tag_user.js.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/tasks.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -681,10 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="114" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="114" />
+        <state relative-caret-position="90">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -697,18 +668,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tasks/_index.html.haml">
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/tag_user.js.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="0">
+          <caret line="0" column="112" lean-forward="true" selection-start-line="0" selection-start-column="112" selection-end-line="0" selection-end-column="112" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/tasks.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="300">
+          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tasks/_task_modal.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
           <folding />
         </state>
       </provider>
