@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   $(".task-checkbox").change(function() {
     var task_id = $(this).data("task-id")
-    var is_complted;
+    var is_completed;
     if(this.checked) {
       is_completed = true
       $(".description-"+task_id).css('text-decoration','line-through');

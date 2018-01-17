@@ -7,11 +7,11 @@
       %ul
         - @task.errors.full_messages.each do |message|
           %li= message
-  .row{:style => "margin-top: 10px;"}
-    .col-md-1.col-md-offset-1
+  .row{:style => "margin-top: 10px;border-bottom: 1px solid #ddd"}
+    .col-md-1
       = f.check_box :is_completed
-    .col-md-7
-      = f.text_area :description,placeholder: 'description',class: "form-control"
+    .col-md-9
+      = f.text_area :description,placeholder: 'describe your task...',class: "form-control",style: "margin-bottom: 10px"
     = f.hidden_field :user_id,value: current_user.id
     .col-md-2.actions
       = f.submit 'Save',class: "btn btn-md btn-primary"

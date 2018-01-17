@@ -13,3 +13,4 @@
 /tmp
 # Ignore idea files
 .idea/
+.DS_Store

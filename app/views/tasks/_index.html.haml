@@ -13,7 +13,7 @@
               %sub added by #{task.user.name.capitalize} #{task.created_at.strftime("%d %b '%y")}
             - else
               %a{href: "tasks/#{task.id}",class: "description-#{task.id}",style: "text-overflow: ellipsis;",data: {remote: true}}#{task.description.upcase}
-              %sub added_by #{task.user.name}
+              %sub added by #{task.user.name.capitalize} #{task.created_at.strftime("%d %b '%y")}
           .col-md-4
             %span{class: "tagged-users-#{task.id}"} #{render partial: 'comments/tagged_user_name',locals: {task: task} }
           .col-md-2
