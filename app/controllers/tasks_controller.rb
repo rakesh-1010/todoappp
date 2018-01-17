@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_task, only: [:show, :edit, :update, :destroy,:change_task_state,:tag_user]
 
   def index
@@ -68,8 +67,8 @@ class TasksController < ApplicationController
   def tag_user
     @user = User.find_by(id: params[:tagged_user_id])
     @taging = Taging.find_by(user_id: params[:tagged_user_id],task_id: params[:id])
-    Taging.add_tag(params[:tagged_user_id],params[:id],@user.name) if @taging.blank?
-    @taging.remove_tag if @taging.present?
+    create_tag(params[:tagged_user_id],params[:id]) if @taging.blank?
+    remove_tag if @taging.present?
   end
 
   private
@@ -83,4 +82,11 @@ class TasksController < ApplicationController
       params.require(:task).permit(:description, :is_completed, :user_id)
     end
 
+    def create_tag(user_id,task_id)
+      Taging.add_tag(user_id,task_id)
+    end
+
+    def remove_tag
+      @taging.remove_tag 
+    end
 end

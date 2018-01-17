@@ -4,28 +4,24 @@ $(document).ready(function(){
 
   $(".task-checkbox").change(function() {
     var task_id = $(this).data("task-id")
+    var is_complted;
     if(this.checked) {
+      is_completed = true
       $(".description-"+task_id).css('text-decoration','line-through');
-      $.ajax({
-        url: 'tasks/change_task_state',
-        data: {id: task_id,is_completed: true},
-      })
     }
     else{
+      is_completed = false
       $(".description-"+task_id).css('text-decoration','none');
-      $.ajax({
-        url: 'tasks/change_task_state',
-        data: {id: task_id,is_completed: false},
-      })
     }
+
+    $.ajax({
+      url: 'tasks/change_task_state',
+      data: {id: task_id,is_completed: is_completed},
+    })
+
   });
 
   $( "#sortable" ).sortable();
   $( "#sortable").disableSelection();
-
-  $(".user-searchbox").select2();
-
-
-
 });
   

@@ -1,2 +1,2 @@
-- task.tagings.each do |user|
-  %span.name-circle{title: "#{user.user_name.upcase}"} #{user.user_name.split('')[0].upcase}
+- task.tagings.each do |tag|
+  %span.name-circle{title: "#{tag.user.name.upcase}"} #{tag.user.name.split('')[0].upcase}

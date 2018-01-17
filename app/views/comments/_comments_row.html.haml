@@ -1,6 +1,6 @@
 %div.row.comments-div(style="margin-top: 20px;margin-bottom: 10px")
   %div.col-md-1
-    %span.name-circle{title: "#{comment.user.name.upcase}"} #{comment.user.name[0].capitalize if comment.user_id.present?}
+    %span.name-circle{title: "#{comment.user.name.upcase}"} #{comment.user.name[0].capitalize }
   %div.col-md-8
     %p #{comment.comment}
   %div.col-md-1
