@@ -54,5 +54,6 @@ group :development do
   gem 'spring' 
   gem "erb2haml"
   gem 'haml'
+  gem 'figaro'
 end
 
