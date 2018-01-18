@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @task.comments.build(comments_params)
-    @comment.save
+    @comment.save!
   end
   
   def destroy
