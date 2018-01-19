@@ -12,10 +12,8 @@ RSpec.describe Task, type: :model do
     expect(task).to_not be_valid
   end
 
-  describe 'Respond to fields' do
-    it { should respond_to(:description)}
-    it { should respond_to(:is_completed)}
-    it { should respond_to(:user_id)}
+  [:description,:is_completed,:user_id].each do |attr|
+    it { should respond_to "#{attr}"}
   end
 
   describe Task do

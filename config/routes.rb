@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'tasks#index'
-  get "tasks/change_task_state"
+  put "tasks/change_task_state"
   get "tasks/tag_user"
   resources :tasks
   resources :comments

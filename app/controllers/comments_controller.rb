@@ -1,16 +1,25 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_task,only: [:new,:create]
   before_action :set_comment,only: [:edit,:update,:destroy]
 
   def create
-    @comment = @task.comments.build(comments_params)
-    @comment.save!
+    @comment = @task.comments.build(comment_params)
+    respond_to do |format|
+      if @comment.save
+        format.js{}
+      else
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
   def destroy
     @task = @comment.task
-    @comment.destroy
+    if @comment.destroy
+      respond_to do |format|
+        format.js{}
+      end
+    end
   end
 
   private
@@ -22,7 +31,7 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
-    def comments_params
+    def comment_params
       params.require(:comment).permit(:comment,:user_id)
     end
 end

@@ -19,8 +19,8 @@ RSpec.describe User, type: :model do
     expect(user1).to_not be_valid
   end
 
-  describe 'Respond to fields' do
-    it { should respond_to(:email)}
+  [:name,:email,:password].each do |attr| 
+    it { should respond_to "#{attr}"}
   end
 
   describe User do

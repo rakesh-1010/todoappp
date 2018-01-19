@@ -3,6 +3,7 @@
     %span.name-circle{title: "#{comment.user.name.upcase}"} #{comment.user.name[0].capitalize }
   %div.col-md-8
     %p #{comment.comment}
+    %sub #{comment.created_at.strftime("%I:%M%p, %d,%b'%y")}
   %div.col-md-1
     = link_to comment, method: :delete, data: { confirm: 'Are you sure?',remote: true } do
       %span

@@ -20,13 +20,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-
     respond_to do |format|
       if @task.save
-        format.js { redirect_to tasks_path, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
+        format.html{ redirect_to tasks_path, notice: 'Task was successfully created.' }
       else
-        format.js { render :new }
+        format.js { redirect_to new_tasks_path }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
@@ -38,7 +36,6 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.html { redirect_to tasks_path, notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }
@@ -57,11 +54,13 @@ class TasksController < ApplicationController
   end
 
   def change_task_state
-    @task.update(is_completed: params[:is_completed])
     respond_to do |format|
-      format.js { redirect_to tasks_path, notice: 'Task was successfully created.' }
+      if @task.update(is_completed: params[:is_completed])
+          format.json {head :no_content}
+      else
+          format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
     end
-
   end
 
   def tag_user
