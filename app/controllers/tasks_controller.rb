@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy,:change_task_state,:tag_user]
+  before_action :set_task,except: [:new,:index,:create] 
 
   def index
     @my_tasks = Task.where(user_id: current_user.id)
     @tagged_tasks = current_user.tagings.map{|tag| tag.task}
-    @tasks = (@my_tasks + @tagged_tasks).uniq
+    @tasks = (@my_tasks + @tagged_tasks).uniq.sort_by &:created_at
   end
 
   def show
