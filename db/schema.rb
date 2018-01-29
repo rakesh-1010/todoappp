@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180118065339) do
+ActiveRecord::Schema.define(version: 20180125053825) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "comment",    limit: 255
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20180118065339) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "tagings", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string   "user_id",    limit: 255
     t.string   "task_id",    limit: 255
     t.datetime "created_at",             null: false

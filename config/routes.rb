@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'tasks#index'
-  put "tasks/change_task_state"
-  get "tasks/tag_user"
+  put "tasks/change_state"
+  get "tasks/toggle_tag"
   resources :tasks
   resources :comments
   devise_for :users

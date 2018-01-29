@@ -16,8 +16,8 @@ $(document).ready(function(){
 
     $.ajax({
       method: 'PUT',
-      url: 'tasks/change_task_state',
-      data: {id: task_id,is_completed: is_completed},
+      url: 'tasks/change_state',
+      data: {id: task_id,is_completed: is_completed}
     })
 
   });

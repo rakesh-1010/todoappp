@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       end
     end
   end
-  
+
   def destroy
     @task = @comment.task
     if @comment.destroy
