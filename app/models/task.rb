@@ -17,6 +17,15 @@ class Task < ActiveRecord::Base
   end
 
   def untag(user)
-    tags.find_by(user_id: user.id).destroy
+    self.tags.find_by(user_id: user.id).destroy
+    self.reload
   end
+
+  def toggle_tag(user)
+    tag_flag = 0
+    tag_flag = 1 if self.tag_exists_for(user)
+    self.untag(user) if tag_flag == 1
+    self.tag(user) if tag_flag == 0
+  end
+
 end

@@ -64,8 +64,7 @@ class TasksController < ApplicationController
   def toggle_tag
     @user = User.find_by(id: params[:tagged_user_id])
     @task = Task.find(params[:id])
-    @task.untag(@user) if @task.tag_exists_for(@user)
-    @task.tag(@user) if !@task.tag_exists_for(@user)
+    @task.toggle_tag(@user)
   end
 
   private

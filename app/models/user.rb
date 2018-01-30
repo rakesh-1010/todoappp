@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tasks
-  has_many :tags,through: :tasks
+  has_many :tags
   has_many :comments,through: :tasks
 
   def tagged_tasks
