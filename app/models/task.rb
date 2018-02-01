@@ -5,7 +5,7 @@ class Task < ActiveRecord::Base
   validates :description, presence: true
 
   def tagged_user_ids
-    tags.map{|tag| tag.user_id}
+    tags.pluck(:user_id)
   end
 
   def tag_exists_for(user)

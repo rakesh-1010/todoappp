@@ -6,10 +6,7 @@ class User < ActiveRecord::Base
   has_many :tasks
   has_many :tags
   has_many :comments,through: :tasks
-
-  def tagged_tasks
-    tags.map{|tag| tag.task}
-  end
+  has_many :tagged_tasks,through: :tags, :source => :task
 
   def all_tasks
     self.tasks + self.tagged_tasks
