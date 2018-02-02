@@ -1,0 +1,17 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      %button.close{"data-dismiss" => "modal", :type => "button"} ×
+      %h4.col-md-5.modal-title #{@task.description.upcase}
+      %span{class: "col-md-5 pull-right tagged-users-#{@task.id}"} #{render partial: 'comments/tagged_user_name',locals: {task: @task} }
+    .modal-body
+      %div.row(style="margin-bottom: 10px" )
+        %div.user-searchdiv.col-md-4
+          = select_tag "tag_user", options_for_select( User.pluck(:name,:id)),{class: "user-searchbox form-control",placeholder: "Search & Add Members",data: {'task-id': @task.id}}
+      = render 'comments/form'
+      %div.comment-body
+        - if @task.comments.size > 1
+          - @task.comments.where.not(:user_id => nil).order('created_at DESC').each do |comment|
+            = render partial: 'comments/comments_row',locals: {comment: comment}
+    .modal-footer
+      %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close

@@ -1,0 +1,12 @@
+
+$("#taskModal").html("#{j render 'task_modal'}")
+$("#taskModal").modal('show')
+
+$("#tag_user").on('change',function () {
+var tagged_user_id = (this.value)
+var task_id = $(this).data('task-id')
+$.ajax({
+url: 'tasks/toggle_tag',
+data: {tagged_user_id: tagged_user_id,id: task_id}
+})
+})

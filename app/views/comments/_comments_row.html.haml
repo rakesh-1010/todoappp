@@ -1,0 +1,10 @@
+%div.row.comments-div(style="margin-top: 20px;margin-bottom: 10px")
+  %div.col-md-1
+    %span.name-circle{title: "#{comment.user.name.upcase}"} #{comment.user.name[0].capitalize }
+  %div.col-md-8
+    %p{style: "margin-bottom: 0px;"} #{comment.comment}
+    %sub #{comment.created_at.strftime("%I:%M%p, %d,%b'%y")}
+  %div.col-md-1
+    = link_to comment, method: :delete, data: { confirm: 'Are you sure?',remote: true } do
+      %span
+        %i.fa.fa-trash
